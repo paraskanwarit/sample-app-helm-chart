@@ -1,6 +1,6 @@
 apiVersion: v2
 name: sample-app
-version: 0.1.0
+version: 0.1.1
 description: A simple NGINX demo application for GitOps with FluxCD and GKE
 type: application
 appVersion: "1.25.0" 
