@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: {{ include "sample-app.fullname" . }}-html
   labels:
-    {{- include "sample-app.labels" . | nindent 4 }}
+    app: {{ include "sample-app.name" . }}
 data:
   index.html: |
     <!DOCTYPE html>
