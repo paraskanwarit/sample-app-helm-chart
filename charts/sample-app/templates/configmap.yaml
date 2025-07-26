@@ -139,8 +139,8 @@ data:
     <body>
         <div class="container">
             <div class="header">
-                <h1>🚀 GitOps Demo - Complete Success!</h1>
-                <p>End-to-End GitOps Pipeline with FluxCD & GKE</p>
+                <h1> GitOps Demo by Paras Kanwar - Complete Success!</h1>
+                <p>I am still learning FluxCD & GKE</p>
             </div>
             
             <div class="content">
