@@ -20,4 +20,11 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 80
-          resources: {{- toYaml .Values.resources | nindent 12 }} 
+          volumeMounts:
+            - name: html-content
+              mountPath: /usr/share/nginx/html
+          resources: {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: html-content
+          configMap:
+            name: {{ include "sample-app.fullname" . }}-html 

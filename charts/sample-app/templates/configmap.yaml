@@ -1,0 +1,234 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "sample-app.fullname" . }}-html
+  labels:
+    {{- include "sample-app.labels" . | nindent 4 }}
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GitOps Demo - Complete Success!</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: #333;
+                min-height: 100vh;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+                overflow: hidden;
+            }
+            .header {
+                background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+                color: white;
+                padding: 40px;
+                text-align: center;
+            }
+            .header h1 {
+                margin: 0;
+                font-size: 2.5em;
+                font-weight: 300;
+            }
+            .header p {
+                margin: 10px 0 0 0;
+                font-size: 1.2em;
+                opacity: 0.9;
+            }
+            .content {
+                padding: 40px;
+            }
+            .achievement-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin: 30px 0;
+            }
+            .achievement-card {
+                background: #f8f9fa;
+                border-radius: 10px;
+                padding: 25px;
+                border-left: 5px solid #28a745;
+                transition: transform 0.3s ease;
+            }
+            .achievement-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            }
+            .achievement-card h3 {
+                color: #2c3e50;
+                margin: 0 0 15px 0;
+                font-size: 1.3em;
+            }
+            .achievement-card ul {
+                margin: 0;
+                padding-left: 20px;
+            }
+            .achievement-card li {
+                margin: 8px 0;
+                color: #555;
+            }
+            .tech-stack {
+                background: #e3f2fd;
+                border-radius: 10px;
+                padding: 25px;
+                margin: 30px 0;
+            }
+            .tech-stack h3 {
+                color: #1976d2;
+                margin: 0 0 15px 0;
+            }
+            .tech-badges {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .tech-badge {
+                background: #1976d2;
+                color: white;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 0.9em;
+                font-weight: 500;
+            }
+            .demo-info {
+                background: #fff3e0;
+                border-radius: 10px;
+                padding: 25px;
+                margin: 30px 0;
+                border-left: 5px solid #ff9800;
+            }
+            .demo-info h3 {
+                color: #e65100;
+                margin: 0 0 15px 0;
+            }
+            .footer {
+                background: #2c3e50;
+                color: white;
+                text-align: center;
+                padding: 20px;
+                font-size: 0.9em;
+            }
+            .status-indicator {
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: #28a745;
+                margin-right: 8px;
+                animation: pulse 2s infinite;
+            }
+            @keyframes pulse {
+                0% { opacity: 1; }
+                50% { opacity: 0.5; }
+                100% { opacity: 1; }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>🚀 GitOps Demo - Complete Success!</h1>
+                <p>End-to-End GitOps Pipeline with FluxCD & GKE</p>
+            </div>
+            
+            <div class="content">
+                <div class="achievement-grid">
+                    <div class="achievement-card">
+                        <h3><span class="status-indicator"></span>Infrastructure as Code</h3>
+                        <ul>
+                            <li>GKE Autopilot cluster deployed via Terraform</li>
+                            <li>Production-ready security configuration</li>
+                            <li>Workload Identity enabled</li>
+                            <li>Cluster autoscaling configured</li>
+                            <li>Zero manual intervention</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <h3><span class="status-indicator"></span>GitOps Platform</h3>
+                        <ul>
+                            <li>FluxCD v2.12.2 successfully bootstrapped</li>
+                            <li>All controllers running and healthy</li>
+                            <li>Git as single source of truth</li>
+                            <li>Automated deployment pipeline</li>
+                            <li>Real-time reconciliation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <h3><span class="status-indicator"></span>Application Deployment</h3>
+                        <ul>
+                            <li>NGINX application deployed via Helm</li>
+                            <li>Custom demo page serving traffic</li>
+                            <li>Kubernetes manifests managed by FluxCD</li>
+                            <li>Multi-repository architecture</li>
+                            <li>Production-grade deployment</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <h3><span class="status-indicator"></span>Automation & Documentation</h3>
+                        <ul>
+                            <li>100% automated setup process</li>
+                            <li>Comprehensive documentation created</li>
+                            <li>Professional demo scripts</li>
+                            <li>Troubleshooting guides</li>
+                            <li>GitHub repositories organized</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tech-stack">
+                    <h3>🛠️ Technology Stack</h3>
+                    <div class="tech-badges">
+                        <span class="tech-badge">Terraform</span>
+                        <span class="tech-badge">Google Kubernetes Engine (GKE)</span>
+                        <span class="tech-badge">FluxCD</span>
+                        <span class="tech-badge">Helm</span>
+                        <span class="tech-badge">Kubernetes</span>
+                        <span class="tech-badge">GitOps</span>
+                        <span class="tech-badge">NGINX</span>
+                        <span class="tech-badge">GitHub</span>
+                    </div>
+                </div>
+                
+                <div class="demo-info">
+                    <h3>📊 Demo Highlights</h3>
+                    <ul>
+                        <li><strong>Zero Manual Intervention:</strong> Complete automation from infrastructure to application</li>
+                        <li><strong>Production Ready:</strong> Enterprise-grade security and scalability</li>
+                        <li><strong>Real Application:</strong> This page is served by the deployed application</li>
+                        <li><strong>GitOps Workflow:</strong> All changes tracked in Git repositories</li>
+                        <li><strong>Scalable Architecture:</strong> Easy to replicate and extend</li>
+                    </ul>
+                </div>
+                
+                <div class="demo-info">
+                    <h3>🔗 Repository Structure</h3>
+                    <ul>
+                        <li><strong>Infrastructure Repository:</strong> Terraform modules and GKE configuration</li>
+                        <li><strong>Helm Chart Repository:</strong> Application packaging and templates</li>
+                        <li><strong>Delivery Repository:</strong> FluxCD manifests and deployment configs</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>🎉 <strong>Congratulations!</strong> Your GitOps pipeline is fully operational and ready for production use.</p>
+                <p>This demo showcases modern DevOps practices and can be used as a foundation for enterprise GitOps implementations.</p>
+            </div>
+        </div>
+    </body>
+    </html> 
