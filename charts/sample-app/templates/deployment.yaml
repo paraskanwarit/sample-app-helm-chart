@@ -27,4 +27,4 @@ spec:
       volumes:
         - name: html-content
           configMap:
-            name: {{ include "sample-app.fullname" . }}-html 
+            name: sample-app-html 
